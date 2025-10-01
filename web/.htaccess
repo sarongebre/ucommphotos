@@ -65,6 +65,9 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  RewriteCond %{HTTP_HOST} ^ucommphotosrv\.unl\.edu$ [NC]
+  RewriteRule ^(.*)$ https://ucommphotos.unl.edu/ [R=301,L]
+
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
