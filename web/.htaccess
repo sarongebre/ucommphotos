@@ -65,7 +65,7 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Redirect old server name to new server name.
+  # Redirect old web name to new web name.
   RewriteCond %{HTTP_HOST} ^ucommphotosrv\.unl\.edu$ [NC]
   RewriteRule ^(.*)$ https://ucommphotos.unl.edu/ [R=301,L]
 
